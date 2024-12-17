@@ -8,9 +8,7 @@ public partial class Gift
     public int GiftId { get; set; }
 
     public string GiftName { get; set; } = null!;
-
     public int CategoryId { get; set; }
-
     public int DonorId { get; set; }
 
     public decimal TicketCost { get; set; }

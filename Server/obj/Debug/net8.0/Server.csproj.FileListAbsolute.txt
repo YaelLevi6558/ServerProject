@@ -166,3 +166,4 @@ D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\Swashb
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\obj\Debug\net8.0\Server.MvcApplicationPartsAssemblyInfo.cs
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\obj\Debug\net8.0\Server.sourcelink.json

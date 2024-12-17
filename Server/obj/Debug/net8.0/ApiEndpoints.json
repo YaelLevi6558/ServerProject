@@ -93,7 +93,7 @@
     "Parameters": [
       {
         "Name": "gift",
-        "Type": "Server.Models.Gift",
+        "Type": "Server.Models.GiftConnection",
         "IsRequired": true
       }
     ],
@@ -109,7 +109,7 @@
     "Parameters": [
       {
         "Name": "gift",
-        "Type": "Server.Models.Gift",
+        "Type": "Server.Models.GiftConnection",
         "IsRequired": true
       }
     ],
@@ -126,6 +126,38 @@
       {
         "Name": "id",
         "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.GiftController",
+    "Method": "GetGiftByDonorName",
+    "RelativePath": "api/Gift/get by donor name",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "donorName",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.GiftController",
+    "Method": "GetGiftByName",
+    "RelativePath": "api/Gift/get by name",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "name",
+        "Type": "System.String",
         "IsRequired": false
       }
     ],

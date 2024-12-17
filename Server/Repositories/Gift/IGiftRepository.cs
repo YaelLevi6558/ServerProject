@@ -4,9 +4,11 @@ namespace Server.Repositories.Gift
 {
     public interface IGiftRepository
     {
-        List<Models.Gift> GetAllGifts();
-        void AddGift(Models.Gift gift);
-        void UpdateGift(Models.Gift gift);
+        List<Models.GiftConnection> GetAllGifts();
+        void AddGift(Models.GiftConnection gift);
+        void UpdateGift(Models.GiftConnection gift);
         void DeleteGift(int id);
+        Models.GiftConnection GetGiftByName(string name);
+        List<Models.GiftConnection> GetGiftsByDonorName(string donorName);
     }
 }

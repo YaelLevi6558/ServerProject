@@ -52,8 +52,8 @@ namespace Server.Repositories.Donor
             if (GetDG == null)
             {
                 return new List<Models.Gift>();
+                throw new Exception("לא נמצא תורם עם ID זה");
             }
-            
             return GetDG.ToList();
             
         }

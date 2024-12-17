@@ -16,12 +16,25 @@ namespace Server.Controllers
         }
         [HttpGet]
         public IActionResult GetAllGifts() {
-           var allGift =  _giftservice.GetAllGifts();
-           return Ok(allGift);
+            var allGift = _giftservice.GetAllGifts();
+            return Ok(allGift);
+        }
+        [HttpGet("get by name")]
+        public IActionResult GetGiftByName(string name)
+        {
+            var newGift = _giftservice.GetGiftByName(name);
+            return Ok(newGift);
+        }
+        [HttpGet("get by donor name")]
+        public IActionResult GetGiftByDonorName(string donorName)
+        {
+            var listGifts = _giftservice.GetGiftsByDonorName(donorName);
+            return Ok(listGifts);
         }
 
+
         [HttpPost]
-        public IActionResult AddGift([FromBody] Models.Gift gift)
+        public IActionResult AddGift([FromBody] Models.GiftConnection gift)
         {
             _giftservice.AddGift(gift);
             return CreatedAtAction(nameof(GetAllGifts), new { gift.GiftId }, gift);   
@@ -36,7 +49,7 @@ namespace Server.Controllers
             //}
         }
         [HttpPut]
-        public ActionResult UpdateGift([FromBody] Models.Gift gift) 
+        public ActionResult UpdateGift([FromBody] Models.GiftConnection gift) 
         {
             _giftservice.UpdateGift(gift);
 
