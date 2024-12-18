@@ -21,9 +21,11 @@ public partial class ChineseAuctionContext : DbContext
 
     public virtual DbSet<Gift> Gifts { get; set; }
 
-    public virtual DbSet<Optional> Optionals { get; set; }
-
     public virtual DbSet<Purchase> Purchases { get; set; }
+
+    public virtual DbSet<User> Users { get; set; }
+
+    public virtual DbSet<Winner> Winners { get; set; }
 
     protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
 #warning To protect potentially sensitive information in your connection string, you should move it out of source code. You can avoid scaffolding the connection string by using the Name= syntax to read it from configuration - see https://go.microsoft.com/fwlink/?linkid=2131148. For more guidance on storing connection strings, see https://go.microsoft.com/fwlink/?LinkId=723263.
@@ -70,11 +72,40 @@ public partial class ChineseAuctionContext : DbContext
                 .HasConstraintName("FK__Gifts__DonorId__4222D4EF");
         });
 
-        modelBuilder.Entity<Optional>(entity =>
+        modelBuilder.Entity<Purchase>(entity =>
+        {
+            entity.HasKey(e => e.PurchaseId).HasName("PK__Purchase__6B0A6BBE95245DBB");
+
+            entity.Property(e => e.PurchaseDate).HasColumnType("datetime");
+
+            entity.HasOne(d => d.Gift).WithMany(p => p.Purchases)
+                .HasForeignKey(d => d.GiftId)
+                .OnDelete(DeleteBehavior.ClientSetNull)
+                .HasConstraintName("FK__Purchases__GiftI__44FF419A");
+
+            entity.HasOne(d => d.User).WithMany(p => p.Purchases)
+                .HasForeignKey(d => d.UserId)
+                .HasConstraintName("FK_Purchases_Users");
+        });
+
+        modelBuilder.Entity<User>(entity =>
+        {
+            entity.HasKey(e => e.UserId).HasName("PK__Users__1788CC4CA752AD3A");
+
+            entity.HasIndex(e => e.UserName, "UQ__Users__C9F284568C05E858").IsUnique();
+
+            entity.Property(e => e.PasswordHash).HasMaxLength(256);
+            entity.Property(e => e.Role).HasMaxLength(20);
+            entity.Property(e => e.UserEmail).HasMaxLength(100);
+            entity.Property(e => e.UserFirstName).HasMaxLength(50);
+            entity.Property(e => e.UserLastName).HasMaxLength(50);
+            entity.Property(e => e.UserName).HasMaxLength(50);
+            entity.Property(e => e.UserPhone).HasMaxLength(20);
+        });
+
+        modelBuilder.Entity<Winner>(entity =>
         {
             entity.HasKey(e => e.WinnerId).HasName("PK__Optional__8A3D1DA87AC29E96");
-
-            entity.ToTable("Optional");
 
             entity.Property(e => e.WinnerEmail).HasMaxLength(100);
             entity.Property(e => e.WinnerName).HasMaxLength(100);
@@ -83,25 +114,14 @@ public partial class ChineseAuctionContext : DbContext
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");
 
-            entity.HasOne(d => d.Gift).WithMany(p => p.Optionals)
+            entity.HasOne(d => d.Gift).WithMany(p => p.Winners)
                 .HasForeignKey(d => d.GiftId)
                 .OnDelete(DeleteBehavior.ClientSetNull)
                 .HasConstraintName("FK__Optional__GiftId__48CFD27E");
-        });
 
-        modelBuilder.Entity<Purchase>(entity =>
-        {
-            entity.HasKey(e => e.PurchaseId).HasName("PK__Purchase__6B0A6BBE95245DBB");
-
-            entity.Property(e => e.BuyerEmail).HasMaxLength(100);
-            entity.Property(e => e.BuyerName).HasMaxLength(100);
-            entity.Property(e => e.BuyerPhone).HasColumnType("decimal(10, 0)");
-            entity.Property(e => e.PurchaseDate).HasColumnType("datetime");
-
-            entity.HasOne(d => d.Gift).WithMany(p => p.Purchases)
-                .HasForeignKey(d => d.GiftId)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("FK__Purchases__GiftI__44FF419A");
+            entity.HasOne(d => d.Purchase).WithMany(p => p.Winners)
+                .HasForeignKey(d => d.PurchaseId)
+                .HasConstraintName("FK_Winners_Purchases");
         });
 
         OnModelCreatingPartial(modelBuilder);

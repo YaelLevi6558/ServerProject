@@ -52,11 +52,11 @@ namespace Server.Repositories.Gift
             if (gift == null)
             {
                 throw new Exception("gift is null");
-            }    
+            }
 
 
             var caterory = _context.Categories.FirstOrDefault(x => x.CategoryName == gift.CategoryName);
-            var donor = _context.Donors.FirstOrDefault(x=> x.FirstName == gift.DonorName);
+            var donor = _context.Donors.FirstOrDefault(x => x.FirstName == gift.DonorName);
             if (caterory == null || donor == null)
             {
                 throw new Exception("Category or Donor not found");
@@ -69,7 +69,7 @@ namespace Server.Repositories.Gift
                 TicketCost = gift.TicketCost,
                 ImageUrl = gift.ImageUrl
             };
-                  
+
             _context.Gifts.Add(giftNew);
             _context.SaveChanges();
         }
@@ -77,11 +77,7 @@ namespace Server.Repositories.Gift
         {
             var caterory = _context.Categories.FirstOrDefault(x => x.CategoryName == gift.CategoryName);
             var donor = _context.Donors.FirstOrDefault(x => x.FirstName == gift.DonorName);
-            var g = _context.Gifts.Find(gift.GiftId);
-            if (caterory == null || donor == null || g == null)
-            {
-                throw new Exception("Category, Donor, or Gift not found");
-            }
+            var g = _context.Gifts.Find(gift.GiftId);           
             g.GiftName = gift.GiftName;
             g.CategoryId = caterory.CategoryId;
             g.DonorId = donor.DonorId;
@@ -105,7 +101,7 @@ namespace Server.Repositories.Gift
             var newGift = (from g in _context.Gifts
                            join category in _context.Categories on g.CategoryId equals category.CategoryId
                            join donor in _context.Donors on g.DonorId equals donor.DonorId
-                           where g.GiftName ==name
+                           where g.GiftName == name
                            select new Models.GiftConnection
                            {
                                GiftId = g.GiftId,
@@ -116,24 +112,12 @@ namespace Server.Repositories.Gift
                                ImageUrl = g.ImageUrl
                            }).FirstOrDefault();
             return newGift;
-
-            //var gift = _context.Gifts.FirstOrDefault(x=>x.GiftName== name);
-            //var caterory = _context.Categories.FirstOrDefault(x => x.CategoryId == gift.CategoryId);
-            //var donor = _context.Donors.FirstOrDefault(x => x.DonorId == gift.DonorId);
-            //var newGift = new Models.GiftConnection();
-            //newGift.GiftId = gift.GiftId;
-            //newGift.GiftName = gift.GiftName;
-            //newGift.CategoryName = caterory.CategoryName;
-            //newGift.DonorName = donor.FirstName;
-            //newGift.TicketCost = gift.TicketCost;
-            //newGift.ImageUrl = gift.ImageUrl;
-            //return newGift;
         }
 
         public List<GiftConnection> GetGiftsByDonorName(string donorName)
         {
             var donor = _context.Donors.FirstOrDefault(x => x.FirstName == donorName);
-            var gift = _context.Gifts.Where(x=> x.DonorId == donor.DonorId).ToList();
+            var gift = _context.Gifts.Where(x => x.DonorId == donor.DonorId).ToList();
             List<Models.GiftConnection> giftList = new List<Models.GiftConnection>();
             foreach (var item in gift)
             {
@@ -146,7 +130,7 @@ namespace Server.Repositories.Gift
                 newGift.TicketCost = item.TicketCost;
                 newGift.ImageUrl = item.ImageUrl;
                 giftList.Add(newGift);
-            }          
+            }
             return giftList;
         }
     }

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace Server.Models;
 
-public partial class Optional
+public partial class Winner
 {
     public int WinnerId { get; set; }
 
@@ -17,5 +17,9 @@ public partial class Optional
 
     public DateTime WinningDate { get; set; }
 
+    public int? PurchaseId { get; set; }
+
     public virtual Gift Gift { get; set; } = null!;
+
+    public virtual Purchase? Purchase { get; set; }
 }
