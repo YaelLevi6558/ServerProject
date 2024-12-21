@@ -1,5 +1,4 @@
-﻿
-using Server.Models;
+﻿using Server.Models;
 
 namespace Server.Repositories.Purchase
 {
@@ -25,13 +24,9 @@ namespace Server.Repositories.Purchase
                            NumberOfTickets = p.NumberOfTickets
                         }).ToList();
             return purchases;
-        }
-
-       
-
+        } 
         List<PurchaseDetails> IPurchaseRepository.GetPurchases()
-        {
-         
+        {        
             var purchases = (from p in _context.Purchases
                              join u in _context.Users on p.UserId equals u.UserId
                              join g in _context.Gifts on p.GiftId equals g.GiftId
@@ -71,10 +66,8 @@ namespace Server.Repositories.Purchase
                                    ).ToList();
             return byExpensiveGift;
         }
-
         public List<PurchaseDetails> OrderByAmountTicket()
-        {
-           
+        {       
             var byAmountTicket = (from p in _context.Purchases
                                   join g in _context.Gifts on p.GiftId equals g.GiftId
                                   group p by new {g.GiftId, g.GiftName, g.TicketCost} into groupGift
@@ -84,9 +77,7 @@ namespace Server.Repositories.Purchase
                                       GiftName = groupGift.Key.GiftName,
                                       NumberOfTickets = groupGift.Sum(x => x.NumberOfTickets),
                                       TicketCost = groupGift.Key.TicketCost
-                                  }
-
-                                 ).ToList();
+                                  }).ToList();
             return byAmountTicket;
         }
     }

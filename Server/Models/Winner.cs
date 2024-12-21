@@ -13,7 +13,7 @@ public partial class Winner
 
     public string WinnerEmail { get; set; } = null!;
 
-    public decimal WinnerPhone { get; set; }
+    public string? WinnerPhone { get; set; }
 
     public DateTime WinningDate { get; set; }
 

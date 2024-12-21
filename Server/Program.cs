@@ -10,6 +10,8 @@ using Server.Repositories.Donor;
 using Server.Services.Donor;
 using Server.Repositories.Purchase;
 using Server.Services.IPurchaseService;
+using Server.Repositories.Winner;
+using Server.Services.Winner;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -22,6 +24,8 @@ builder.Services.AddScoped<IDonorRepository, DonorRepository>();
 builder.Services.AddScoped<IDonorService, DonorService>();
 builder.Services.AddScoped<IPurchaseRepository, PurchaseRepository>();
 builder.Services.AddScoped<IPurchaseService, PurchaseService>();
+builder.Services.AddScoped<IWinnerRepository, WinnerRepository>();
+builder.Services.AddScoped<IWinnerService, WinnerService>();
 builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen(c =>

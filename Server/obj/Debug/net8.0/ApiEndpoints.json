@@ -166,7 +166,7 @@
   {
     "ContainingType": "Server.Controllers.PurchaseController",
     "Method": "GetPurchaseByGift",
-    "RelativePath": "api/Purchase",
+    "RelativePath": "api/Purchase/GetPurchaseByGift",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -203,6 +203,16 @@
     "ContainingType": "Server.Controllers.PurchaseController",
     "Method": "OrderByExpensiveGift",
     "RelativePath": "api/Purchase/OrderByExpensiveGift",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.WinnerController",
+    "Method": "RandomToGift",
+    "RelativePath": "api/Winner",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,

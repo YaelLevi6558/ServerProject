@@ -17,6 +17,8 @@ public partial class Gift
 
     public string? ImageUrl { get; set; }
 
+    public virtual ICollection<Cart> Carts { get; set; } = new List<Cart>();
+
     public virtual Category Category { get; set; } = null!;
 
     public virtual Donor Donor { get; set; } = null!;
