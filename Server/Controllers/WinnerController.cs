@@ -20,5 +20,18 @@ namespace Server.Controllers
             return Ok();
 
         }
+        [HttpGet("giftId")]
+        public ActionResult RandomToGift(int id)
+        {
+            _winnerService.RandomToGift(id);
+            return Ok();
+        }
+        [HttpGet("excel")]
+        public ActionResult GenerateExcelReport()
+        {
+            _winnerService.GenerateExcelReport();
+            return Ok();
+        }
+               
     }
 }

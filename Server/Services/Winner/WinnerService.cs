@@ -10,9 +10,20 @@ namespace Server.Services.Winner
             _winnerrepository = winnerrepository;
         }
 
+     
+
         public void RandomToGift()
         {
            _winnerrepository.RandomToGift();
+        }
+
+        public void RandomToGift(int id)
+        {
+            _winnerrepository.RandomToGift(id);
+        }
+        public void GenerateExcelReport()
+        {
+            _winnerrepository.GenerateExcelReport();
         }
     }
 }

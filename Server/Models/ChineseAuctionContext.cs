@@ -132,7 +132,7 @@ public partial class ChineseAuctionContext : DbContext
 
             entity.Property(e => e.WinnerEmail).HasMaxLength(100);
             entity.Property(e => e.WinnerName).HasMaxLength(100);
-            entity.Property(e => e.WinnerPhone).HasColumnType("decimal(10, 0)");
+            entity.Property(e => e.WinnerPhone).HasMaxLength(20);
             entity.Property(e => e.WinningDate)
                 .HasDefaultValueSql("(getdate())")
                 .HasColumnType("datetime");

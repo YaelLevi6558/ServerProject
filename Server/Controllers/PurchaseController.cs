@@ -40,5 +40,11 @@ namespace Server.Controllers
             var orderBy = _purchasesservice.OrderByAmountTicket();
             return Ok(orderBy);
         }
+        [HttpGet("GenerateExcelReport")]
+        public ActionResult GenerateExcelReport()
+        {
+            _purchasesservice.GenerateExcelReport();
+            return Ok();
+        }
     }
 }

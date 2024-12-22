@@ -152,9 +152,6 @@ D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtim
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\win-arm64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\win-x64\native\Microsoft.Data.SqlClient.SNI.dll
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\win-x86\native\Microsoft.Data.SqlClient.SNI.dll
-D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\Microsoft.Win32.SystemEvents.dll
-D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\unix\lib\net6.0\System.Drawing.Common.dll
-D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Drawing.Common.dll
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Runtime.Caching.dll
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\win\lib\net6.0\System.Security.Cryptography.ProtectedData.dll
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\browser\lib\net8.0\System.Text.Encodings.Web.dll
@@ -167,3 +164,12 @@ D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\Swashb
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\obj\Debug\net8.0\Server.MvcApplicationPartsAssemblyInfo.cs
 D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\obj\Debug\net8.0\Server.sourcelink.json
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\EPPlus.dll
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\EPPlus.Interfaces.dll
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\EPPlus.System.Drawing.dll
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\Microsoft.IO.RecyclableMemoryStream.dll
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\System.Security.Cryptography.Pkcs.dll
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\win\lib\net8.0\Microsoft.Win32.SystemEvents.dll
+D:\הנדסאים\שנה ב\ChineseAuction\Server\Server\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Security.Cryptography.Pkcs.dll

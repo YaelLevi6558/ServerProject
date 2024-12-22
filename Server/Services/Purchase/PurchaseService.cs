@@ -32,5 +32,10 @@ namespace Server.Services.IPurchaseService
         {
             return _purchasesrepository.OrderByAmountTicket();
         }
+
+        public void GenerateExcelReport()
+        {
+            _purchasesrepository.GenerateSalesRevenueReport();
+        }
     }
 }

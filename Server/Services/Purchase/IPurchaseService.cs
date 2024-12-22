@@ -6,5 +6,7 @@
         List<Models.PurchaseDetails> GetPurchases();
         List<Models.PurchaseDetails> OrderByExpensiveGift();
         List<Models.PurchaseDetails> OrderByAmountTicket();
+        void GenerateExcelReport();
+
     }
 }

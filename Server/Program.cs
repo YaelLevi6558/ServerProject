@@ -12,8 +12,10 @@ using Server.Repositories.Purchase;
 using Server.Services.IPurchaseService;
 using Server.Repositories.Winner;
 using Server.Services.Winner;
+using OfficeOpenXml;
 
 var builder = WebApplication.CreateBuilder(args);
+ExcelPackage.LicenseContext = LicenseContext.NonCommercial;  
 
 builder.Services.AddDbContext<ChineseAuctionContext>(options =>
     options.UseSqlServer(builder.Configuration.GetConnectionString("Connection"))
