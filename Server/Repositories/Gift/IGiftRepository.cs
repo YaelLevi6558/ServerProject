@@ -10,5 +10,7 @@ namespace Server.Repositories.Gift
         void DeleteGift(int id);
         Models.GiftConnection GetGiftByName(string name);
         List<Models.GiftConnection> GetGiftsByDonorName(string donorName);
+        List<GiftConnection> OrderByPrice();
+        List<GiftConnection> OrderByCategory(string category);
     }
 }

@@ -3,8 +3,7 @@ using System.Collections.Generic;
 
 namespace Server.Models;
 
-public partial class Purchase
-{
+public partial class Purchase { 
     public int PurchaseId { get; set; }
 
     public int GiftId { get; set; }

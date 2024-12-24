@@ -1,10 +1,12 @@
-﻿using Microsoft.AspNetCore.Http;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Server.Models;
 using Server.Services.Donor;
 
 namespace Server.Controllers
 {
+    [Authorize(Roles = "Admin")]
     [Route("api/[controller]")]
     [ApiController]
     public class DonorController : ControllerBase
@@ -14,6 +16,7 @@ namespace Server.Controllers
         {
             _donorservice = donorservice;
         }
+       
         [HttpGet]
         public IActionResult getAllDonors()
         {

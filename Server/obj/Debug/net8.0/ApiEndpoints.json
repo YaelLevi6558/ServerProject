@@ -1,5 +1,42 @@
 [
   {
+    "ContainingType": "Server.Controllers.AuthController",
+    "Method": "Login",
+    "RelativePath": "api/Auth/login",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "request",
+        "Type": "Server.Models.LoginRequest",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.CartController",
+    "Method": "AddGiftToCart",
+    "RelativePath": "api/Cart",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "giftId",
+        "Type": "System.Int32",
+        "IsRequired": false
+      },
+      {
+        "Name": "qentity",
+        "Type": "System.Int32",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Server.Controllers.DonorController",
     "Method": "getAllDonors",
     "RelativePath": "api/Donor",
@@ -164,6 +201,32 @@
     "ReturnTypes": []
   },
   {
+    "ContainingType": "Server.Controllers.GiftController",
+    "Method": "OrderByCategory",
+    "RelativePath": "api/Gift/OrderByCategory",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "category",
+        "Type": "System.String",
+        "IsRequired": false
+      }
+    ],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.GiftController",
+    "Method": "OrderByPrice",
+    "RelativePath": "api/Gift/OrderByPrice",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
     "ContainingType": "Server.Controllers.PurchaseController",
     "Method": "GenerateExcelReport",
     "RelativePath": "api/Purchase/GenerateExcelReport",
@@ -217,6 +280,22 @@
     "IsController": true,
     "Order": 0,
     "Parameters": [],
+    "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Server.Controllers.RegisterController",
+    "Method": "addUser",
+    "RelativePath": "api/Register",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "user",
+        "Type": "Server.Models.User",
+        "IsRequired": true
+      }
+    ],
     "ReturnTypes": []
   },
   {

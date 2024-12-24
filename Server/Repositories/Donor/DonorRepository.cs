@@ -41,14 +41,12 @@ namespace Server.Repositories.Donor
             _context.Donors.Update(donor);
             _context.SaveChanges();
         }
-
         public List<Models.Gift> GetDonorGifts(int id)
         {
             var GetDG = _context.Donors
                 .Where(d => d.DonorId == id)
                 .Select(d => d.Gifts)
                 .FirstOrDefault();
-
             if (GetDG == null)
             {
                 return new List<Models.Gift>();

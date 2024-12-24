@@ -42,5 +42,15 @@ namespace Server.Services.Gift
         {
            return _giftrepository.GetGiftsByDonorName(donorName);
         }
+
+        public List<GiftConnection> OrderByPrice()
+        {
+           return  _giftrepository.OrderByPrice();
+        }
+
+        public List<GiftConnection> OrderByCategory(string category)
+        {
+            return _giftrepository.OrderByCategory(category);
+        }
     }
 }

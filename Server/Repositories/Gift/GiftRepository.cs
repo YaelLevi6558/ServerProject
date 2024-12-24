@@ -113,5 +113,42 @@ namespace Server.Repositories.Gift
                             }).ToList();
             return giftList;
         }
+
+        public List<GiftConnection> OrderByPrice()
+        {
+            var byPrice  = (from g in _context.Gifts
+                            join d in _context.Donors on g.DonorId equals d.DonorId
+                            join c in _context.Categories on g.CategoryId equals c.CategoryId
+                            orderby g.TicketCost descending
+                            select new GiftConnection
+                            {
+                                GiftId = g.GiftId,
+                                GiftName = g.GiftName,
+                                CategoryName = c.CategoryName,
+                                DonorName = d.FirstName,
+                                TicketCost = g.TicketCost,
+                                ImageUrl= g.ImageUrl
+                            }).ToList();
+            return byPrice;
+        }
+
+        public List<GiftConnection> OrderByCategory(string category)
+        {
+            var byCategory = (from g in _context.Gifts
+                           join d in _context.Donors on g.DonorId equals d.DonorId
+                           join c in _context.Categories on g.CategoryId equals c.CategoryId
+                           orderby c.CategoryName == category descending
+                           select new GiftConnection
+                           {
+                               GiftId = g.GiftId,
+                               GiftName = g.GiftName,
+                               CategoryName = c.CategoryName,
+                               DonorName = d.FirstName,
+                               TicketCost = g.TicketCost,
+                               ImageUrl = g.ImageUrl
+                           }).ToList();
+            return byCategory;
+        }
+
     }
 }

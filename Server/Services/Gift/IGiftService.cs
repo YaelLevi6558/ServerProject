@@ -1,4 +1,6 @@
-﻿namespace Server.Services.Gift
+﻿using Server.Models;
+
+namespace Server.Services.Gift
 {
     public interface IGiftService
     {
@@ -8,6 +10,7 @@
         void DeleteGift(int id);
         Models.GiftConnection GetGiftByName(string name);
         List<Models.GiftConnection> GetGiftsByDonorName(string donorName);
-
+        List<GiftConnection> OrderByPrice();
+        List<GiftConnection> OrderByCategory(string category);
     }
 }
